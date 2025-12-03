@@ -111,6 +111,10 @@
       <img src="bottle.png" alt="Heart & Bottle Icon" />
       <p>POTS Device Concept</p>
     </div>
+    <div class="icon-block" onclick="openModal('modal6')">
+      <img src="atelier_icon.png" alt="Atelier Vintage Icon" />
+      <p>Atelier Vintage – HCD</p>
+    </div>
   </div>
 
   <!-- Modals -->
@@ -294,6 +298,141 @@
     </div>
   </div>
 
+    <!-- Modal 6: Atelier Vintage – Human-Centered Fashion Marketplace -->
+  <div id="modal6" class="modal" onclick="closeModal(event, 'modal6')">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal(event, 'modal6')">&times;</span>
+
+      <h2>Human-Centered Design: Atelier Vintage Marketplace</h2>
+
+      <!-- Two-column layout -->
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
+
+        <!-- LEFT COLUMN: Two images + video -->
+        <div style="flex: 1 1 45%; display: flex; flex-direction: column; gap: 16px;">
+
+          <!-- Image 1: UX Research -->
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <img src="Atelier_UX.png"
+                alt="Atelier Vintage UX Research"
+                style="width: 100%; border-radius: 8px;" />
+            <p style="font-size: 0.8em; margin-top: 4px; text-align: center;">
+              UX Research Synthesis
+            </p>
+          </div>
+
+          <!-- Image 2: Prototype -->
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <img src="Atelier_prototype.png"
+                alt="Atelier Vintage Prototype"
+                style="width: 100%; border-radius: 8px;" />
+            <p style="font-size: 0.8em; margin-top: 4px; text-align: center;">
+              Early Prototype Screens
+            </p>
+          </div>
+
+          <!-- Video -->
+          <iframe
+            width="100%" height="315"
+            src="https://www.youtube.com/embed/ZTzzCAtBR5Y?si=0MGU-5NfcU-Vo5t6"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+        <!-- RIGHT COLUMN: Project Description -->
+        <div style="flex: 1 1 50%;">
+
+          <p>
+            For Columbia’s Human-Centered Design & Innovation course, my team and I designed
+            <strong>Atelier Vintage</strong>—an online marketplace that helps vintage shoppers confidently
+            buy, tailor, style, and care for 20–100-year-old garments without the usual uncertainty
+            or cost barriers.
+          </p>
+
+          <h3>Overview</h3>
+          <p>
+            We started with the hypothesis that shoppers love vintage for sustainability and individuality,
+            but avoid wearing it because they don’t know how to size, alter, clean, or style older garments.
+            Interviews with shoppers, stylists, and sustainability advocates confirmed that vintage pieces
+            often feel high-risk and low-support across fit, care, and styling.
+          </p>
+
+          <h3>My Role</h3>
+          <p>
+            I contributed to defining the core problem, synthesizing user insights, shaping the Smart-Fit
+            and Digital Passport concepts, comparing concept directions, and developing the prototype and
+            final narrative across pitch and demo materials.
+          </p>
+
+          <h3>How We Reached the Solution</h3>
+          <p>
+            We explored three concepts—an app, an online marketplace, and an in-person one-stop shop.
+            The end-to-end marketplace emerged as the strongest direction because it addressed user anxiety
+            around fit, care, and authenticity while remaining operationally realistic.
+          </p>
+
+          <h3>The Final Solution</h3>
+          <ul>
+            <li><strong>AI Smart-Fit</strong> for measurement capture and digital alteration maps</li>
+            <li><strong>Certified tailor network</strong> offering accessible, consistent alterations</li>
+            <li><strong>Digital Product Passport</strong> with history, care guidance, and styling inspiration</li>
+            <li><strong>Marketplace model</strong> with optional styling add-ons and transparent pricing</li>
+          </ul>
+
+          <h3>Why It Solves the Problem</h3>
+          <p>
+            The system reduces cognitive load, removes technical barriers around fit and garment care,
+            and increases trust by making a garment’s history and maintenance guidance visible—
+            addressing core problems surfaced in research.
+          </p>
+
+          <h3>Challenges & Unpursued Directions</h3>
+          <p>
+            Alternative directions—like rental models, hybrid stylist-tailor apps, and immersive
+            in-person vintage stores—were compelling but not pursued due to operational complexity
+            or limited user pull.
+          </p>
+
+          <h3>User & Business Impact</h3>
+          <p>
+            Shoppers gain confidence wearing vintage pieces; platforms reduce returns tied to sizing;
+            and tailors/stylists benefit from more predictable digital-to-physical demand.
+          </p>
+
+          <h3>What I Learned</h3>
+          <p>
+            This project strengthened my ability to translate ambiguous user hesitations into actionable
+            design requirements, evaluate solution paths objectively, and articulate a full service
+            ecosystem linking UX flows, business operations, and user value.
+          </p>
+
+          <h3>Prototype & Demo</h3>
+          <ul>
+            <li>
+              💻 <a href="https://ateliervintage.lovable.app/" target="_blank">
+                Try the Atelier Vintage prototype
+              </a>
+            </li>
+            <li>
+              🎥 <a href="https://youtu.be/ZTzzCAtBR5Y" target="_blank">
+                Watch the full presentation
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+
   <script>
     function openModal(id) {
       document.getElementById(id).style.display = "flex";
@@ -307,7 +446,7 @@
 </body>
 <nav style="position: absolute; top: 20px; left: 20px; z-index: 1000; font-weight: 600;">
   <a href="#" style="margin-right: 20px; text-decoration: none; color: #0b1e36;">Home</a>
-  <a href="ashleymiller_resume_jun25.pdf" target="_blank" style="margin-right: 20px; text-decoration: none; color: #0b1e36;">Resume</a>
+  <a href="ashleymiller_resume_fall25.pdf" target="_blank" style="margin-right: 20px; text-decoration: none; color: #0b1e36;">Resume</a>
   <a href="https://www.linkedin.com/in/ashleymiller20" target="_blank" style="margin-right: 20px; text-decoration: none; color: #0b1e36;">LinkedIn</a>
   <a href="mailto:am6555@columbia.edu" style="text-decoration: none; color: #0b1e36;">Contact</a>
 </nav>
