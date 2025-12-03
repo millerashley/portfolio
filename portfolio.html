@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ashley Miller | Engineering Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Rubik', sans-serif;
+      background: url('blue_background.png') repeat;
+      background-size: cover;
+      color: #0b1e36;
+    }
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: rgba(255, 255, 255, 0.8);
+      background-image: url('blue_background.png');
+      background-size: cover;
+      background-repeat: repeat;
+    }
+    header img {
+      max-width: 300px;
+      margin: 20px 0;
+    }
+    .intro {
+      font-size: 1.3em;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin: 80px 40px;
+      gap: 60px;
+    }
+    .icon-block {
+      text-align: center;
+      cursor: pointer;
+      flex: 0 1 180px;
+    }
+    .icon-block img {
+      width: 140px;
+      height: 140px;
+      transition: transform 0.2s;
+    }
+    .icon-block:hover img {
+      transform: scale(1.05);
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      padding: 30px;
+      max-width: 1100px;
+      width: 95%;
+      border-radius: 10px;
+      text-align: left;
+      color: #0b1e36;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .modal-close {
+      float: right;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ashley Miller</h1>
+    <img src="cartoon_me.png" alt="Ashley cartoon engineering illustration" />
+    <p class="intro">
+      Hi, I'm Ashley Miller — a biomedical engineering MS student who builds across the full range of engineering environments. Whether I'm in the shop, at the bench, or behind the screen, I'm driven by a passion for creating thoughtfully engineered tools that bring us closer to the next generation of precision consumer medical devices. Click the icons below to learn more about some of my selected projects!
+    </p>
+  </header>
+
+  <div class="grid">
+    <div class="icon-block" onclick="openModal('modal1')">
+      <img src="microscope_icon.png" alt="Microscope Icon" />
+      <p>ARF-OCT Benchtop Design</p>
+    </div>
+    <div class="icon-block" onclick="openModal('modal2')">
+      <img src="robot_icon.png" alt="Robot Icon" />
+      <p>Walking Quadruped Robot</p>
+    </div>
+    <div class="icon-block" onclick="openModal('modal3')">
+      <img src="gear_icon.png" alt="Gear Icon" />
+      <p>Jigging & Assembly Design</p>
+    </div>
+    <div class="icon-block" onclick="openModal('modal4')">
+      <img src="book_icon.png" alt="Book Icon" />
+      <p>Blood Flow Simulation</p>
+    </div>
+    <div class="icon-block" onclick="openModal('modal5')">
+      <img src="bottle.png" alt="Heart & Bottle Icon" />
+      <p>POTS Device Concept</p>
+    </div>
+    <div class="icon-block" onclick="openModal('modal6')">
+      <img src="atelier_icon.png" alt="Atelier Vintage Icon" />
+      <p>Atelier Vintage – HCD</p>
+    </div>
+  </div>
+
+  <!-- Modals -->
+  <div id="modal1" class="modal" onclick="closeModal(event, 'modal1')">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal(event, 'modal1')">&times;</span>
+      <h2>Benchtop Setup for ARF-OCE Imaging</h2>
+      <p>This project involved designing a custom waterbath fixture to align ultrasound and OCT imaging systems in a lab-based tissue-mimicking setup. The goal was to improve the effective pushing resolution of ARF by integrating a new transducer and aligning it with the OCT beam.</p>
+      
+      <ul>
+        <li>Designed and fabricated a custom waterbath fixture to align optical and acoustic paths for ARF-OCE imaging</li>
+        <li>Enabled improved resolution of the acoustic radiation force (ARF) focal spot using a newly mounted transducer</li>
+        <li>Iterated CAD models and tested mechanical alignments to integrate OCT and ultrasound transducers in a tissue-mimicking setup</li>
+        <li>Presented findings in two lab meetings and submitted a final semester research report</li>
+      </ul>
+  
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; margin: 20px 0;">
+        <img src="waterbath_CAD.png" alt="CAD of waterbath fixture" style="width: 40%; border-radius: 6px;" />
+        <img src="waterbath_benchtop.png" alt="Benchtop photo of waterbath fixture" style="width: 40%; border-radius: 6px;" />
+      </div>
+  
+      <!-- <a href="ARF-OCE_waterbath_report.pdf" target="_blank" style="display: inline-block; margin-top: 15px; background: #0b1e36; color: white; padding: 10px 16px; border-radius: 6px; text-decoration: none;">
+        📄 View Full Research Report
+      </a> -->
+    </div>
+  </div>
+  
+
+  <div id="modal2" class="modal" onclick="closeModal(event, 'modal2')">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal(event, 'modal2')">&times;</span>
+      <h2>Walking Quadruped Robot – Rainbow RoboCat</h2>
+  
+      <!-- 📸 + 📝 Side-by-side layout -->
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
+        <!-- 📸 Left: Image Gallery (2x2 grid) -->
+        <div style="flex: 1 1 45%; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <img src="glamour_ted.jpg" alt="Rainbow RoboCat Glamour Photo" style="width: 100%; border-radius: 8px;" />
+            <p style="font-size: 0.8em; margin-top: 4px; text-align: center;">Glamour shot (feat. Teddy)</p>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <img src="robot_schematic.JPG" alt="Robot CAD Schematic" style="width: 100%; border-radius: 8px;" />
+            <p style="font-size: 0.8em; margin-top: 4px; text-align: center;">CAD schematic</p>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <img src="simulated.png" alt="PyBullet Simulation" style="width: 100%; border-radius: 8px;" />
+            <p style="font-size: 0.8em; margin-top: 4px; text-align: center;">PyBullet simulation</p>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <img src="walking_action_shot.jpg" alt="Walking Action Shot" style="width: 100%; border-radius: 8px;" />
+            <p style="font-size: 0.8em; margin-top: 4px; text-align: center;">Walking action shot</p>
+          </div>
+        </div>
+  
+        <!-- 📝 Right: Project Description -->
+        <div style="flex: 1 1 50%;">
+          <p>
+            As part of <em>Robotics Studio</em> at Columbia, we were challenged to design, build, and program a fast-walking robot using only 8 servo motors, materials available at home or in the Makerspace, and a strict $100 budget. I created <strong>Rainbow RoboCat</strong> — a quadruped robot with serial-driven legs, a rainbow-gradient 3D-printed chassis, and playful feline features.
+          </p>
+          <p>
+            From early <strong>concept sketches</strong> to a detailed <strong>CAD assembly</strong>, I engineered every component myself — modeling each nut, bolt, and joint in Inventor before moving to physical fabrication. I printed all chassis components on my at-home Ender 3 V3 SE using <strong>silk rainbow PLA</strong>, sanding and finishing each part to give RoboCat a polished look. I also <strong>learned how to solder</strong> for the first time, wiring the LX16A servos, battery, and Raspberry Pi into a compact and durable onboard setup.
+          </p>
+          <p>
+            Starting from a <strong>single leg</strong>, I gradually expanded control to all four legs using Python and the <code>pylx16a</code> library, developing <strong>motion primitives</strong> and a working sinusoidal gait. To further boost RoboCat’s speed, I built a full <strong>PyBullet simulation</strong> of the robot using a custom URDF and applied a <strong>hill climber and genetic algorithm</strong> to optimize the gait’s sinusoidal parameters.
+          </p>
+          <p>
+            The result: a robot capable of reaching a <strong>top speed of 38 cm/s</strong>, with movement tuned both in simulation and validated on hardware — all while staying under budget and full of personality.
+          </p>
+        </div>
+      </div>
+  
+      <!-- 🎥 Video Section -->
+      <h3 style="margin-top: 30px;">🎥 Check out videos below!</h3>
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <iframe src="https://www.youtube.com/embed/JXa4My5Pm58" width="100%" height="315" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/b2mN5fI4Llo" width="100%" height="315" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/8BDgg_0Cm7w" width="100%" height="315" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+  
+  <div id="modal3" class="modal" onclick="closeModal(event, 'modal3')">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal(event, 'modal3')">&times;</span>
+      <h2>Jigging & Assembly Design – Cornell Electric Vehicles</h2>
+  
+      <!-- 📦 Flex container for images and text -->
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
+        
+        <!-- 🖼️ Left: Stacked Image Column -->
+        <div style="flex: 1 1 45%; display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <img src="cev_cad.png" alt="80-20 chassis jig CAD design" style="width: 70%; border-radius: 8px;" />
+            <p style="font-size: 0.8em; text-align: center; margin-top: 4px;">80-20 chassis jig CAD design</p>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <img src="cev_pic.png" alt="80-20 real life chassis jig assembled" style="width: 70%; border-radius: 8px;" />
+            <p style="font-size: 0.8em; text-align: center; margin-top: 4px;">80-20 real life chassis jig assembled</p>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <img src="cev_selfie.JPG" alt="Group selfie with the CEV assembly team" style="width: 70%; border-radius: 8px;" />
+            <p style="font-size: 0.8em; text-align: center; margin-top: 4px;">Group selfie with the CEV assembly team</p>
+          </div>
+        </div>
+  
+        <!-- 📝 Right: Project Description -->
+        <div style="flex: 1 1 50%;">
+          <p>
+            Over my two years on Cornell Electric Vehicles, I grew from a general mechanical subteam member into <strong>Drivetrain Subsystem Lead</strong>, a role I held for about six months. During this time, I led a dedicated assembly and jigging team of around a dozen people through the most precision-critical phase of the car’s build: physically integrating the drivetrain and brake subsystems into the carbon fiber chassis.
+          </p>
+          <p>
+            I coordinated closely with other subsystem leads while personally designing and iterating multiple <strong>custom drilling jigs</strong> in Autodesk Inventor. These combined <strong>3D-printed stencils</strong>, <strong>laser-cut acrylic</strong>, and <strong>8020 framing</strong> to align drivetrain components to CAD-based constraints, all while navigating real-world tolerances and foam-core crush risks. I developed the wheel well and axle alignment jigs and directly participated in shop fabrication, using mill, drill press, and laser cutter tools comfortably to ensure fast turnarounds.
+          </p>
+          <p>
+            One of our initial floor jigs — which I personally designed — failed due to an oversight in the support geometry. Thanks to quick thinking from teammates I was managing, we pivoted to a laser-cut acrylic solution and salvaged the drilling schedule just in time. I learned to manage shifting priorities, communicate intent across teams, and respond constructively to mistakes under time pressure.
+          </p>
+          <p>
+            Later, I helped resolve unexpected interference between drivetrain and steering components by co-designing a machined brake mount fixture on short notice. These experiences sharpened my skills in DFM, cross-functional collaboration, and real-world mechanical problem-solving. The drivetrain’s successful competition debut was the product of intensive planning, close communication, and a lot of hands-on shop work.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+  <div id="modal4" class="modal" onclick="closeModal(event, 'modal4')">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal(event, 'modal4')">&times;</span>
+      <h2>Cardiovascular Simulation & Modeling</h2>
+  
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start; margin-bottom: 20px;">
+  
+        <!-- 🖼️ Left: Image Column -->
+        <div style="flex: 1 1 45%; display: flex; flex-direction: column; gap: 16px;">
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <img src="fluent_fig_3.png" alt="Wall shear stress in healthy and obstructed artery" style="width: 100%; border-radius: 8px;" />
+            <p style="font-size: 0.8em; text-align: center; margin-top: 4px;">Wall shear stress in healthy vs. obstructed artery</p>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <img src="fluent_fig_4.png" alt="Velocity field in healthy and obstructed artery" style="width: 100%; border-radius: 8px;" />
+            <p style="font-size: 0.8em; text-align: center; margin-top: 4px;">Velocity vector field across artery bifurcation</p>
+          </div>
+        </div>
+  
+        <!-- 📝 Right: Description Text -->
+        <div style="flex: 1 1 50%;">
+          <p>
+            This project collection explores the cardiovascular system through fluid dynamics simulation, numerical transport modeling, and developmental biomechanics analysis.
+          </p>
+  
+          <p>
+            In a computational fluid dynamics (CFD) study using Ansys Fluent, I simulated blood flow through a bifurcating carotid artery with and without obstruction. Using realistic CAD geometries and mesh refinement strategies, I analyzed how arterial narrowing affects flow behavior — specifically, increases in wall shear stress and flow recirculation zones that can contribute to conditions like aneurysms. The results demonstrated the role of CFD in assessing cardiovascular health risks and optimizing treatment designs.
+          </p>
+  
+          <p>
+            In a separate biomechanics research project, I authored a review paper on <em>cardiac looping morphogenesis</em> — the earliest symmetry-breaking event in heart development. I compared two major modeling approaches: an integrated finite element model based on experimental observations (Shi et al., 2014), and a geometric instability model driven by residual stress (Bevilacqua et al., 2021). This work deepened my understanding of how mechanical forces and material properties drive tissue morphogenesis and shape organ development.
+          </p>
+  
+          <p>
+            Additionally, I explored 1D and 2D transport phenomena using Python-based numerical methods to simulate diffusion and advection in blood vessels. While an exploratory project, it helped solidify my understanding of discretization schemes and the interplay between transport mechanics and boundary conditions — foundational for modeling drug delivery and solute transport in biomedical contexts.
+          </p>
+  
+          <div style="margin-top: 16px;">
+            <a href="fluent_artery copy.pdf" target="_blank" style="display: inline-block; background: #0b1e36; color: white; padding: 10px 16px; border-radius: 6px; text-decoration: none; margin-right: 10px;">📄 View CFD Report</a>
+            <a href="Cardiac_Looping.pdf" target="_blank" style="display: inline-block; background: #0b1e36; color: white; padding: 10px 16px; border-radius: 6px; text-decoration: none;">📄 View Cardiac Looping Paper</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+
+  <div id="modal5" class="modal" onclick="closeModal(event, 'modal5')">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal(event, 'modal5')">&times;</span>
+      <h2>Future Concept: POTS Water Bottle</h2>
+      <p>My most recent personal engineering project is a smart water bottle designed to support individuals with POTS (Postural Orthostatic Tachycardia Syndrome), a chronic condition involving autonomic nervous system dysfunction that causes symptoms like fatigue, dizziness, and brain fog. Because increasing water and sodium intake is a cornerstone of POTS management, I'm developing an early-stage concept for a smart bottle that integrates <strong>electrolyte dosing, medication storage, and biofeedback features</strong>. The design includes a built-in hydration tracker and pulse oximeter for real-time heart rate monitoring. As someone with POTS myself, my goal is to create practical assistive technology that helps users manage symptoms and regain autonomy in daily life. Check back for more developments later!</p>
+    </div>
+  </div>
+
+    <!-- Modal 6: Atelier Vintage – Human-Centered Fashion Marketplace -->
+  <div id="modal6" class="modal" onclick="closeModal(event, 'modal6')">
+    <div class="modal-content">
+      <span class="modal-close" onclick="closeModal(event, 'modal6')">&times;</span>
+
+      <h2>Human-Centered Design: Atelier Vintage Marketplace</h2>
+
+      <!-- Two-column layout -->
+      <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
+
+        <!-- LEFT COLUMN: Two images + video -->
+        <div style="flex: 1 1 45%; display: flex; flex-direction: column; gap: 16px;">
+
+          <!-- Image 1: UX Research -->
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <img src="Atelier_UX.png"
+                alt="Atelier Vintage UX Research"
+                style="width: 100%; border-radius: 8px;" />
+            <p style="font-size: 0.8em; margin-top: 4px; text-align: center;">
+              UX Research Synthesis
+            </p>
+          </div>
+
+          <!-- Image 2: Prototype -->
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <img src="Atelier_prototype.png"
+                alt="Atelier Vintage Prototype"
+                style="width: 100%; border-radius: 8px;" />
+            <p style="font-size: 0.8em; margin-top: 4px; text-align: center;">
+              Early Prototype Screens
+            </p>
+          </div>
+
+          <!-- Video -->
+          <iframe
+            width="100%" height="315"
+            src="https://www.youtube.com/embed/ZTzzCAtBR5Y?si=0MGU-5NfcU-Vo5t6"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+
+        </div>
+
+        <!-- RIGHT COLUMN: Project Description -->
+        <div style="flex: 1 1 50%;">
+
+          <p>
+            For Columbia’s Human-Centered Design & Innovation course, my team and I designed
+            <strong>Atelier Vintage</strong>—an online marketplace that helps vintage shoppers confidently
+            buy, tailor, style, and care for 20–100-year-old garments without the usual uncertainty
+            or cost barriers.
+          </p>
+
+          <h3>Overview</h3>
+          <p>
+            We started with the hypothesis that shoppers love vintage for sustainability and individuality,
+            but avoid wearing it because they don’t know how to size, alter, clean, or style older garments.
+            Interviews with shoppers, stylists, and sustainability advocates confirmed that vintage pieces
+            often feel high-risk and low-support across fit, care, and styling.
+          </p>
+
+          <h3>My Role</h3>
+          <p>
+            I contributed to defining the core problem, synthesizing user insights, shaping the Smart-Fit
+            and Digital Passport concepts, comparing concept directions, and developing the prototype and
+            final narrative across pitch and demo materials.
+          </p>
+
+          <h3>How We Reached the Solution</h3>
+          <p>
+            We explored three concepts—an app, an online marketplace, and an in-person one-stop shop.
+            The end-to-end marketplace emerged as the strongest direction because it addressed user anxiety
+            around fit, care, and authenticity while remaining operationally realistic.
+          </p>
+
+          <h3>The Final Solution</h3>
+          <ul>
+            <li><strong>AI Smart-Fit</strong> for measurement capture and digital alteration maps</li>
+            <li><strong>Certified tailor network</strong> offering accessible, consistent alterations</li>
+            <li><strong>Digital Product Passport</strong> with history, care guidance, and styling inspiration</li>
+            <li><strong>Marketplace model</strong> with optional styling add-ons and transparent pricing</li>
+          </ul>
+
+          <h3>Why It Solves the Problem</h3>
+          <p>
+            The system reduces cognitive load, removes technical barriers around fit and garment care,
+            and increases trust by making a garment’s history and maintenance guidance visible—
+            addressing core problems surfaced in research.
+          </p>
+
+          <h3>Challenges & Unpursued Directions</h3>
+          <p>
+            Alternative directions—like rental models, hybrid stylist-tailor apps, and immersive
+            in-person vintage stores—were compelling but not pursued due to operational complexity
+            or limited user pull.
+          </p>
+
+          <h3>User & Business Impact</h3>
+          <p>
+            Shoppers gain confidence wearing vintage pieces; platforms reduce returns tied to sizing;
+            and tailors/stylists benefit from more predictable digital-to-physical demand.
+          </p>
+
+          <h3>What I Learned</h3>
+          <p>
+            This project strengthened my ability to translate ambiguous user hesitations into actionable
+            design requirements, evaluate solution paths objectively, and articulate a full service
+            ecosystem linking UX flows, business operations, and user value.
+          </p>
+
+          <h3>Prototype & Demo</h3>
+          <ul>
+            <li>
+              💻 <a href="https://ateliervintage.lovable.app/" target="_blank">
+                Try the Atelier Vintage prototype
+              </a>
+            </li>
+            <li>
+              🎥 <a href="https://youtu.be/ZTzzCAtBR5Y" target="_blank">
+                Watch the full presentation
+              </a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "flex";
+    }
+    function closeModal(event, id) {
+      if (event.target.id === id || event.target.classList.contains('modal-close')) {
+        document.getElementById(id).style.display = "none";
+      }
+    }
+  </script>
+</body>
+<nav style="position: absolute; top: 20px; left: 20px; z-index: 1000; font-weight: 600;">
+  <a href="#" style="margin-right: 20px; text-decoration: none; color: #0b1e36;">Home</a>
+  <a href="ashleymiller_resume_fall25.pdf" target="_blank" style="margin-right: 20px; text-decoration: none; color: #0b1e36;">Resume</a>
+  <a href="https://www.linkedin.com/in/ashleymiller20" target="_blank" style="margin-right: 20px; text-decoration: none; color: #0b1e36;">LinkedIn</a>
+  <a href="mailto:am6555@columbia.edu" style="text-decoration: none; color: #0b1e36;">Contact</a>
+</nav>
+
+</html>
